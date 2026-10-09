@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-AI Chat Web System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Боковая панель (Sidebar) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="new-chat-btn">+ Новый чат</div>
+                <div class="chat-history">
+                    <div class="history-title">Доступные ядра ИИ:</div>
+                    <select id="modelSelector" class="model-dropdown">
+                        <option value="tred-v1.json">Tred-1 (GPT-style)</option>
+                        <option value="tyed-v1.json">Tyed-1 (Claude-style)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Блок скачивания утилит экосистемы -->
+            <div class="download-section">
+                <div class="history-title">Инструменты T-AI:</div>
+                <a href="./ACreator.exe" download="ACreator.exe" class="download-btn btn-acreator">
+                    🚀 Скачать ACreator.exe
+                </a>
+                <a href="./jsai.exe" download="jsai.exe" class="download-btn btn-jsai">
+                    🛠️ Скачать jsai.exe
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span> <span id="statusText">Ядро готово</span>
+            </div>
+        </aside>
+
+        <!-- Основная зона чата -->
+        <main class="main-chat">
+            <header class="chat-header">
+                <div class="model-info">T-AI Web Runtime <span class="model-badge">v1.5</span></div>
+            </header>
+
+            <div id="chatConsole" class="chat-messages">
+                <div class="message system">
+                    <div class="avatar">⚙️</div>
+                    <div class="text">Система: Веб-рантайм успешно инициализирован. Выберите файл ядра .json для тестирования инференса. Из панели слева можно скачать утилиты проекта.</div>
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <div class="input-wrapper">
+                    <input type="text" id="promptInput" placeholder="Спросите модель о чем угодно..." autocomplete="off">
+                    <button id="submitBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                            <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
